@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Speed Climber</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.88.2/dist/phaser.js"></script>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            /* height: 100%; */
+            background-color: #ffffff;
+
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Load scene files -->
+    <script src="scenes/MainMenuScene.js"></script>
+    <script src="scenes/NameEntryScene.js"></script>
+    <script src="scenes/GameScene.js"></script>
+    <script src="scenes/GameOverScene.js"></script>
+
+    <script type="text/javascript">
+        const config = {
+            type: Phaser.AUTO,
+            width: 1440,
+            height: 960,
+            scale: {
+                mode: Phaser.Scale.FIT,
+                autoCenter: Phaser.Scale.CENTER_BOTH
+            },
+            scene: [
+                // MainMenuScene, 
+                // NameEntryScene, 
+                GameScene, 
+                // GameOverScene
+            ],
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: true
+                }
+            }
+        };
+
+        const game = new Phaser.Game(config);
+    </script>
+
+</body>
+
+</html>
